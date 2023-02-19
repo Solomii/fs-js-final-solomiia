@@ -24,40 +24,33 @@ function stringToColour(str) {
 
 function getFirstLettersFromName(str) {
  return  str.trim().split(' ').map( item => item.toUpperCase().substring(0, 1)).join(' ');
-//   const firstLetters = str
-//   .trim()
-//   .split(' ')
-//   .map(word => word.charAt(0))
-//   .join(' ')
-
-// return firstLetters;
 }
-// console.log(getFirstLettersFromName("Tom Name"))
 
-function createElement(
-  tag = "div",
-  { classNames, attributes, styles, listeners } = {},
-  ...children
-) {
-  const elem = document.createElement(tag);
-  if (classNames) {
-      elem.classList.add(...classNames);
-  }
-  if (attributes) {
-      for (const [nameAttr, valueAttr] of Object.entries(attributes)) {
-          elem.setAttribute(nameAttr, valueAttr);
-      }
-  }
-  if (styles) {
-      for (const [nameStyle, valueStyle] of Object.entries(styles)) {
-          elem.style[nameStyle] = valueStyle;
-      }
-  }
-  if (listeners) {
-      for (const [eventType, eventHandler] of Object.entries(listeners)) {
-          elem.addEventListener(eventType, eventHandler);
-      }
-  }
-  elem.append(...children);
-  return elem;
-}
+
+// function createElement(
+//   tag = "div",
+//   { classNames, attributes, styles, listeners } = {},
+//   ...children
+// ) {
+//   const elem = document.createElement(tag);
+//   if (classNames) {
+//       elem.classList.add(...classNames);
+//   }
+//   if (attributes) {
+//       for (const [nameAttr, valueAttr] of Object.entries(attributes)) {
+//           elem.setAttribute(nameAttr, valueAttr);
+//       }
+//   }
+//   if (styles) {
+//       for (const [nameStyle, valueStyle] of Object.entries(styles)) {
+//           elem.style[nameStyle] = valueStyle;
+//       }
+//   }
+//   if (listeners) {
+//       for (const [eventType, eventHandler] of Object.entries(listeners)) {
+//           elem.addEventListener(eventType, eventHandler);
+//       }
+//   }
+//   elem.append(...children);
+//   return elem;
+// }

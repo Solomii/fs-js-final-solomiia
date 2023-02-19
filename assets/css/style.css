@@ -1,51 +1,56 @@
 :root {
     --size: 300px;
-  }
+}
 
-  * {
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-  }
+}
 
-  img {
+img {
     width: 100%;
-  }
+}
 
-  #root {
+#root {
+    padding: 30px;
+    text-align: center;
     max-width: 1200px;
     min-width: 350px;
     width: 80%;
-    margin:0 auto;
-    text-align: center;
-  }
+    margin: 0 auto;
+}
 
-  .cardsContainer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+.title {
+    font-size:5em;
+    margin-bottom: 50px;
+}
+
+.cardsContainer {
+    margin-bottom: 30px;
     list-style: none;
-  }
+    border: none;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
 
-  .cardWrapper {
+.cardWrapper {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
     margin: 1em;
-  }
+}
 
-  .card {
-    border: 1px solid #ccc;
-    padding: 5px;
-  }
-
-  .cardImageWrapper {
+.cardImageWrapper {
     width: var(--size);
     height: var(--size);
     position: relative;
-  }
+    border-radius: 50%;
+}
 
-  .cardImage,
-  .initials {
+.cardImage,
+.initials {
     width: inherit;
     height: inherit;
     border-radius: 50%;
@@ -54,33 +59,32 @@
     right: 0;
     left: 0;
     bottom: 0;
-  }
+}
 
-  .initials{
+.initials {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: blueviolet; */
-    color:#fff;
+    color: #fff;
     font-size: 4em;
-  }
+}
 
-  .cardImage {
+.cardImage {
     object-fit: cover;
     object-position: top;
-  }
+}
 
-  .cardName {
+.cardName {
+    margin: 20px;
     font-size: 1.8em;
-  }
+}
 
-  .cardDescription {
-    font-size: 0.8em;
-  }
-  
-  .oneLine {
-    max-width: var(--size);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+.input {
+    width: 80%;
+    margin: 50px;
+    padding: 30px;
+    font-size: 50px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    border:none;
+}
