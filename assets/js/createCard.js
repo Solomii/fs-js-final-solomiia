@@ -1,4 +1,25 @@
 // const myList = document.getElementById("root");
+const socialMap = new Map();
+
+socialMap.set("www.instagram.com", "*");
+socialMap.set("twitter.com", "*");
+socialMap.set("www.facebook.com", "fa-brands fa-instagram");
+
+
+// const user = JSON.parse({
+//     id: 5,
+//     firstName: "Scarlett",
+//     lastName: "Johansson",
+//     profilePicture:
+//         "https://m.media-amazon.com/images/M/MV5BMTM3OTUwMDYwNl5BMl5BanBnXkFtZTcwNTUyNzc3Nw@@._V1_.jpg",
+//     contacts: [
+//         "https://www.facebook.com/pages/category/Actor/Scarlett-Johansson-Official-101457158013203/",
+//         "https://twitter.com/scarlett_jo",
+//         "https://www.instagram.com/scarlett.johansson.fc/?hl=ru",
+//     ],
+// });
+
+
 
 function createActorCard(actor) {
     const article = document.createElement("article");
@@ -30,12 +51,39 @@ function createActorCard(actor) {
     divWrapper.append(divInitial, img);
 
     const fullName = document.createElement("h3");
-    fullName.classList.add("cardName")
+    fullName.classList.add("cardName");
     fullName.textContent = `${actor.firstName} ${actor.lastName}`;
+    
+  
+    const wrapperUl = document.createElement("div");
+    const ulSocial = document.createElement("ul");
+   
+    
 
-    listItem.append(divWrapper, fullName)
+ 
+    // aSocial.textContent = `${actor.contacts[0]}`
+    debugger
+    `${actor.contacts.map((href)=>{
+
+        const listSocial = document.createElement("li");
+       const aSocial = document.createElement("a");
+        aSocial.setAttribute('href', href);
+        aSocial.textContent=`${href}`
+        
+        listSocial.append(aSocial)
+        ulSocial.append(listSocial);
+        // const hrefname = new URL(href);
+        // console.log(hrefname)
+      
+    })}`
+   
+   
+    
+   
+    wrapperUl.append(ulSocial);
+    listItem.append(divWrapper, fullName,wrapperUl);
     listActors.append(listItem);
-    article.append(listActors)
-    myList.append(article)
+    article.append(listActors);
+    myList.append(article);
     return article;
-  }
+}

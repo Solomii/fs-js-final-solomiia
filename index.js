@@ -16,7 +16,7 @@ fetch(myRequest)
         for (const actor of data) {
             createActorCard(actor);
         }
-
+      
         const input = document.createElement("input");
         input.type ="text"
         input.placeholder = "you choosed";
