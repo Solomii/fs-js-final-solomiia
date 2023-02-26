@@ -1,9 +1,9 @@
 // const myList = document.getElementById("root");
 const socialMap = new Map();
 
-socialMap.set("www.instagram.com", "#");
-socialMap.set("twitter.com", "$");
-socialMap.set("www.facebook.com", "*");
+socialMap.set("www.instagram.com", "instagram");
+socialMap.set("twitter.com", "twitter");
+socialMap.set("www.facebook.com", "facebook");
 
 function createActorCard(actor) {
     const article = document.createElement("article");
@@ -40,10 +40,15 @@ function createActorCard(actor) {
 
     const wrapperUl = document.createElement("div");
     const ulSocial = document.createElement("ul");
+    ulSocial.classList.add("ulSocial");
+   
 
     `${actor.contacts.map((href) => {
         const listSocial = document.createElement("li");
+        listSocial.classList.add("liSocial");
         const aSocial = document.createElement("a");
+        aSocial.classList.add("aSocial");
+        
 
         const { hostname } = new URL(href);
         console.log(hostname);

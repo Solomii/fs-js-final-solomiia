@@ -17,10 +17,15 @@ fetch(myRequest)
            createActorCard(actor);
         }
       
-        const input = document.createElement("input");
-        input.type ="text"
-        input.placeholder = "you choosed";
-        input.classList.add("input");
-        myList.append(input);
+
+        const wrapperText = document.createElement('div')
+        wrapperText.classList.add("wrapperText")
+        const text = document.createElement("h2");
+        text.textContent ="your choose" ;
+        // input.placeholder = "≈";
+        // input.classList.add("text");
+        wrapperText.append(text);
+        myList.append(wrapperText)
+        
     })
     .catch((error) => console.log(error));
