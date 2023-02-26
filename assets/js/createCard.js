@@ -1,25 +1,9 @@
 // const myList = document.getElementById("root");
 const socialMap = new Map();
 
-socialMap.set("www.instagram.com", "*");
-socialMap.set("twitter.com", "*");
-socialMap.set("www.facebook.com", "fa-brands fa-instagram");
-
-
-// const user = JSON.parse({
-//     id: 5,
-//     firstName: "Scarlett",
-//     lastName: "Johansson",
-//     profilePicture:
-//         "https://m.media-amazon.com/images/M/MV5BMTM3OTUwMDYwNl5BMl5BanBnXkFtZTcwNTUyNzc3Nw@@._V1_.jpg",
-//     contacts: [
-//         "https://www.facebook.com/pages/category/Actor/Scarlett-Johansson-Official-101457158013203/",
-//         "https://twitter.com/scarlett_jo",
-//         "https://www.instagram.com/scarlett.johansson.fc/?hl=ru",
-//     ],
-// });
-
-
+socialMap.set("www.instagram.com", "#");
+socialMap.set("twitter.com", "$");
+socialMap.set("www.facebook.com", "*");
 
 function createActorCard(actor) {
     const article = document.createElement("article");
@@ -53,35 +37,29 @@ function createActorCard(actor) {
     const fullName = document.createElement("h3");
     fullName.classList.add("cardName");
     fullName.textContent = `${actor.firstName} ${actor.lastName}`;
-    
-  
+
     const wrapperUl = document.createElement("div");
     const ulSocial = document.createElement("ul");
-   
-    
 
- 
-    // aSocial.textContent = `${actor.contacts[0]}`
-    debugger
-    `${actor.contacts.map((href)=>{
-
+    `${actor.contacts.map((href) => {
         const listSocial = document.createElement("li");
-       const aSocial = document.createElement("a");
-        aSocial.setAttribute('href', href);
-        aSocial.textContent=`${href}`
-        
-        listSocial.append(aSocial)
+        const aSocial = document.createElement("a");
+
+        const { hostname } = new URL(href);
+        console.log(hostname);
+
+        const test = socialMap.get(hostname).split(" ");
+
+        aSocial.innerText = `${test}`;
+
+        aSocial.setAttribute("href", href);
+
+        listSocial.append(aSocial);
         ulSocial.append(listSocial);
-        // const hrefname = new URL(href);
-        // console.log(hrefname)
-      
-    })}`
-   
-   
-    
-   
+    })}`;
+
     wrapperUl.append(ulSocial);
-    listItem.append(divWrapper, fullName,wrapperUl);
+    listItem.append(divWrapper, fullName, wrapperUl);
     listActors.append(listItem);
     article.append(listActors);
     myList.append(article);

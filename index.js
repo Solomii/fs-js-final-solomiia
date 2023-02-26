@@ -14,7 +14,7 @@ fetch(myRequest)
 
 
         for (const actor of data) {
-            createActorCard(actor);
+           createActorCard(actor);
         }
       
         const input = document.createElement("input");
