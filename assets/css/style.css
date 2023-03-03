@@ -26,6 +26,13 @@ img {
     margin-bottom: 50px;
 }
 
+.card{
+    display: flex;
+    align-items:center;
+    text-align: center;
+    justify-content: center;
+}
+
 .cardsContainer {
     margin-bottom: 30px;
     list-style: none;
@@ -91,7 +98,19 @@ img {
 
 .aSocial {
     text-decoration: none;
+    cursor: pointer;
+}
+
+i {
     color:black;
+    font-size: 30px;
+    
+}
+
+i:hover {
+    color:gray;
+    cursor: pointer;
+    
 }
 
 .wrapperText {

@@ -1,6 +1,6 @@
 "use strict";
 
-const myList = document.getElementById("root");
+// const myList = document.getElementById("root");
 
 const myRequest = new Request("./assets/js/data.json");
 
@@ -22,8 +22,6 @@ fetch(myRequest)
         wrapperText.classList.add("wrapperText")
         const text = document.createElement("h2");
         text.textContent ="your choose" ;
-        // input.placeholder = "≈";
-        // input.classList.add("text");
         wrapperText.append(text);
         myList.append(wrapperText)
         

@@ -1,9 +1,9 @@
-// const myList = document.getElementById("root");
+const myList = document.getElementById("root");
 const socialMap = new Map();
 
-socialMap.set("www.instagram.com", "instagram");
-socialMap.set("twitter.com", "twitter");
-socialMap.set("www.facebook.com", "facebook");
+socialMap.set("www.instagram.com", "fa-brands fa-instagram");
+socialMap.set("twitter.com", "fa-brands fa-facebook");
+socialMap.set("www.facebook.com", "fa-brands fa-twitter");
 
 function createActorCard(actor) {
     const article = document.createElement("article");
@@ -41,24 +41,26 @@ function createActorCard(actor) {
     const wrapperUl = document.createElement("div");
     const ulSocial = document.createElement("ul");
     ulSocial.classList.add("ulSocial");
-   
 
-    `${actor.contacts.map((href) => {
+    `${actor.contacts.map((path) => {
         const listSocial = document.createElement("li");
         listSocial.classList.add("liSocial");
         const aSocial = document.createElement("a");
-        aSocial.classList.add("aSocial");
-        
+        listSocial.classList.add("aSocial");
+        const iSocial = document.createElement("i");
+        iSocial.classList.add("iSocial")
+        console.log(iSocial)
+      
+        aSocial.setAttribute("href", path);
+        aSocial.setAttribute("target", "_blank");
 
-        const { hostname } = new URL(href);
+        const { hostname } = new URL(path);
         console.log(hostname);
+      
+        iSocial.className= socialMap.get(hostname);
+       console.log(aSocial)
 
-        const test = socialMap.get(hostname).split(" ");
-
-        aSocial.innerText = `${test}`;
-
-        aSocial.setAttribute("href", href);
-
+        aSocial.append(iSocial)
         listSocial.append(aSocial);
         ulSocial.append(listSocial);
     })}`;
